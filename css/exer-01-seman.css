@@ -1,0 +1,75 @@
+@charset "UTF-8"
+
+/*
+Formas SHORT-HAND de inserir valores:
+
+De margem!
+margin-top: 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+margin-left: 10px;
+---- É IGUAL A:
+margin: 10px;
+
+De flex!
+flex-direction: row;
+flex-wrap: now-wrap;
+---- É IGUAL A:
+flex-flow: row now-wrap;
+
+Outro exemplo de flex!
+flex-grow:1
+flwx-basis:1
+flex-shrink:1
+---- É IGUAL A:
+flex: 1 1px 1px;
+O último valor (shrink) pode ser ignorado, pois é pouco utilizado.
+*/
+
+.container{
+  display: flex;
+  margin: 10px;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container *{
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.cabecalho{
+  background-color: #d14935;
+}
+
+.rodape{
+    background-color: #35d18b;
+}
+
+.principal{
+  text-align: left;
+    background-color: #33dfdf;
+}
+
+.lateral-1{
+    background-color: #ecd019;
+}
+
+.lateral-2{
+    background-color: #da70e7;
+}
+
+@media all and (min-width: 600px) {
+   .lateral{flex: 1 0 0;}
+
+}
+
+@media all and (min-width: 800px){
+  .principal{ flex: 3 0; }
+  .lateral-1{ order: 1; }
+  .princpal{ order: 2; }
+  .lateral-2{ order: 3; }
+  .rodape{ order: 4}
+
+}
